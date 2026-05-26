@@ -1,0 +1,299 @@
+/* PÁGINA DE DETALHES - TEMA OBSIDIAN */
+
+/* Container principal */
+main.ficha {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2em 3em;
+}
+
+/* SEÇÃO SUPERIOR - INFO DA SÉRIE (FIXA NO TOPO) */
+.ficha-descricao {
+    display: flex;
+    gap: 3em;
+    align-items: flex-start;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    border-radius: 20px;
+    padding: 3em;
+    margin-bottom: 3em;
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+/* POSTER - FIXO E DESTACADO */
+.ficha-descricao img {
+    width: 320px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 16px;
+    flex-shrink: 0;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(124, 58, 237, 0.4);
+    border: 2px solid rgba(124, 58, 237, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.ficha-descricao img:hover {
+    transform: scale(1.02);
+}
+
+/* TEXTO E INFO */
+.ficha-descricao > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.ficha-descricao h1 {
+    font-size: 48px;
+    margin: 0;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--purple-secondary), var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.descricao-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.descricao-texto p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.descricao-texto p b {
+    color: var(--purple-light);
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/* BADGE DE AVALIAÇÃO */
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: rgba(124, 58, 237, 0.2);
+    border: 1px solid var(--purple-primary);
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    width: fit-content;
+}
+
+.rating-badge .stars {
+    color: #fbbf24;
+}
+
+.rating-badge .score {
+    color: var(--purple-light);
+    font-weight: 700;
+}
+
+/* SEÇÃO DE TEMPORADAS E EPISÓDIOS */
+.ficha-temporada {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 2.5em;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.ficha-temporada h3 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 1.5em;
+    color: var(--purple-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.ficha-temporada h3::before {
+    content: "📺";
+    font-size: 32px;
+}
+
+/* SELECT DE TEMPORADAS */
+.dropdown-select {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 2px solid rgba(124, 58, 237, 0.3);
+    border-radius: 12px;
+    padding: 1em 1.5em;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin-bottom: 2em;
+}
+
+.dropdown-select:hover {
+    border-color: var(--purple-primary);
+    background-color: var(--bg-secondary);
+}
+
+.dropdown-select:focus {
+    outline: none;
+    border-color: var(--purple-primary);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+/* CONTAINER DE EPISÓDIOS - COM SCROLL */
+.episodios {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 1em;
+}
+
+/* Scrollbar customizada */
+.episodios::-webkit-scrollbar {
+    width: 8px;
+}
+
+.episodios::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+}
+
+.episodios::-webkit-scrollbar-thumb {
+    background: var(--purple-primary);
+    border-radius: 10px;
+}
+
+.episodios::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-secondary);
+}
+
+/* BLOCO DE CADA TEMPORADA */
+.bloco-temporada {
+    margin-bottom: 2.5em;
+}
+
+.bloco-temporada:last-child {
+    margin-bottom: 0;
+}
+
+.bloco-temporada h4 {
+    color: var(--purple-secondary);
+    margin-bottom: 1em;
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 1em;
+    border-left: 4px solid var(--purple-primary);
+}
+
+/* LISTA DE EPISÓDIOS */
+.episodios-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.episodios-lista li {
+    padding: 1.2em 1.5em;
+    margin-bottom: 0.5em;
+    background: var(--bg-tertiary);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.episodios-lista li:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: var(--purple-primary);
+    color: var(--text-primary);
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.episodios-lista li:last-child {
+    margin-bottom: 0;
+}
+
+/* Estado vazio */
+.episodios-empty {
+    text-align: center;
+    padding: 3em;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.episodios-empty::before {
+    content: "📺";
+    display: block;
+    font-size: 48px;
+    margin-bottom: 1em;
+    opacity: 0.5;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 900px) {
+    main.ficha {
+        padding: 1.5em;
+    }
+    
+    .ficha-descricao {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2em;
+    }
+    
+    .ficha-descricao img {
+        width: 260px;
+        height: 390px;
+    }
+    
+    .ficha-descricao h1 {
+        font-size: 36px;
+    }
+    
+    .ficha-temporada {
+        padding: 1.5em;
+    }
+    
+    .ficha-temporada h3 {
+        font-size: 24px;
+    }
+    
+    .dropdown-select {
+        max-width: 100%;
+    }
+    
+    .episodios {
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ficha-descricao img {
+        width: 220px;
+        height: 330px;
+    }
+    
+    .ficha-descricao h1 {
+        font-size: 28px;
+    }
+    
+    .descricao-texto p {
+        font-size: 14px;
+    }
+    
+    .episodios-lista li {
+        padding: 1em;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,167 @@
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta Obsidian/Roxo */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #141420;
+    --bg-tertiary: #1a1a2e;
+    
+    --purple-primary: #7c3aed;
+    --purple-secondary: #a78bfa;
+    --purple-light: #c4b5fd;
+    --purple-dark: #5b21b6;
+    
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    
+    --overlay: rgba(10, 10, 15, 0.85);
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.cabecalho {
+    padding: 1.5em 3em;
+    background: linear-gradient(to bottom, var(--bg-primary), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+.cabecalho.scrolled {
+    background: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+}
+
+.cabecalho__logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.cabecalho__logo img {
+    height: 45px;
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
+}
+
+.cabecalho__logo h1 {
+    font-size: 26px;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--purple-primary), var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cabecalho__logo select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--bg-tertiary);
+    border-radius: 10px;
+    padding: 0.6em 1.2em;
+    margin-left: 2em;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cabecalho__logo select:hover {
+    border-color: var(--purple-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.cabecalho__logo select:focus {
+    outline: none;
+    border-color: var(--purple-primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.cabecalho__opcoes {
+    display: flex;
+    gap: 2em;
+}
+
+.material-symbols-outlined {
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 28px;
+}
+
+.material-symbols-outlined:hover {
+    color: var(--purple-primary);
+    transform: scale(1.1);
+}
+
+/* MAIN */
+main {
+    padding-top: 80px;
+}
+
+/* UTILIDADES */
+.hidden {
+    display: none;
+}
+
+/* SCROLLBAR CUSTOMIZADA */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-secondary);
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        padding: 1em;
+        flex-direction: column;
+        gap: 1em;
+    }
+    
+    .cabecalho__logo {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cabecalho__logo select {
+        margin-left: 0;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    
+    main {
+        padding-top: 180px;
+    }
+}

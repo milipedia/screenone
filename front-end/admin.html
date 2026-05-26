@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <title>Admin - Screen ONE</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__logo">
+            <a href="index.html">
+                <img src="./img/logo.png" alt="Logo Screen ONE">
+            </a>
+            <h1>Screen ONE - Admin</h1>
+        </div>
+        <div class="cabecalho__opcoes">
+            <a href="index.html" class="btn-voltar">
+                <span class="material-symbols-outlined">home</span>
+                Voltar ao Site
+            </a>
+        </div>
+    </header>
+    
+    <main class="admin-container">
+        <!-- FORMULÁRIO DE BUSCA OMDB -->
+        <section class="admin-section">
+            <div class="section-header">
+                <h2>🔍 Buscar Série na OMDB</h2>
+                <p>Digite o nome da série em inglês para buscar automaticamente</p>
+            </div>
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="busca-titulo" 
+                    placeholder="Ex: Game of Thrones, Breaking Bad..."
+                    class="search-input"
+                >
+                <button onclick="buscarSerieOMDB()" class="btn-primary">
+                    <span class="material-symbols-outlined">search</span>
+                    Buscar e Salvar
+                </button>
+            </div>
+            
+            <div id="resultado-busca" class="resultado-container"></div>
+        </section>
+
+        <!-- LISTA DE SÉRIES CADASTRADAS -->
+        <section class="admin-section">
+            <div class="section-header">
+                <h2>📺 Séries Cadastradas</h2>
+                <button onclick="carregarSeries()" class="btn-secondary">
+                    <span class="material-symbols-outlined">refresh</span>
+                    Atualizar Lista
+                </button>
+            </div>
+            
+            <div id="lista-series" class="series-grid">
+                <!-- Séries carregadas via JS -->
+            </div>
+        </section>
+    </main>
+    
+    <script src="./scripts/admin.js" type="module"></script>
+</body>
+</html>
